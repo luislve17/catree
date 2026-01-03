@@ -1,8 +1,8 @@
 # 🐱 catree
 
 A powerful bash utility for recursively displaying file contents with style. Think of it as rescuing a cat from a tree – walking down the directory structure and collecting all your files.
-<img width="1463" height="776" alt="image" src="https://github.com/user-attachments/assets/8b7c4e66-3024-4931-bacb-dccecff2e2db" />
 
+<img width="1463" height="776" alt="image" src="https://github.com/user-attachments/assets/8b7c4e66-3024-4931-bacb-dccecff2e2db" />
 
 ## ✨ Features
 
@@ -10,12 +10,12 @@ A powerful bash utility for recursively displaying file contents with style. Thi
 - 🎨 Syntax highlighting support (bat, pygmentize, etc.)
 - 🔍 Filter by file extensions (include/exclude)
 - 🚫 Respect `.gitignore` patterns
-- 📄 Display specific files or entire trees
+- 📄 Display specific files or entire directory trees
+- 🔒 Automatically excludes `.git` directory
 
 ## 📦 Installation
 
 ### Download with curl or wget
-
 ```bash
 # Using curl
 curl -o catall.sh https://raw.githubusercontent.com/luislve17/catree/main/catall.sh
@@ -27,7 +27,6 @@ chmod +x catall.sh
 ```
 
 ### Install to system PATH
-
 ```bash
 # Move to a directory accessible by all users
 sudo mv catall.sh /usr/local/bin/catall
@@ -36,10 +35,12 @@ sudo mv catall.sh /usr/local/bin/catall
 **Note:** Check the [Releases](https://github.com/luislve17/catree/releases) page for stable versions.
 
 ## 🚀 Quick Start
-
 ```bash
 # Display all files
 catall
+
+# Show version
+catall -v
 
 # With syntax highlighting
 catall -pipe "bat --paging=never --style=numbers,grid"
@@ -50,15 +51,16 @@ catall -inc "py,js,md"
 # Respect .gitignore
 catall -gitignore
 
-# Specific files
+# Specific files or folders
 catall -f "README.md" -f "config.json"
+catall -f src -f tests
 ```
 
 ## 📖 Options
-
 ```
 -h              Show help
--f FILE         Specific file (repeatable)
+-v              Show version
+-f PATH         Specific file or folder (repeatable)
 -inc EXTS       Include extensions (comma-separated)
 -exc EXTS       Exclude extensions (comma-separated)
 -gitignore      Respect .gitignore patterns
