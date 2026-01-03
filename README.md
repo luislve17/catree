@@ -1,6 +1,8 @@
 # 🐱 catree
 
 A powerful bash utility for recursively displaying file contents with style. Think of it as rescuing a cat from a tree – walking down the directory structure and collecting all your files.
+<img width="1463" height="776" alt="image" src="https://github.com/user-attachments/assets/8b7c4e66-3024-4931-bacb-dccecff2e2db" />
+
 
 ## ✨ Features
 
